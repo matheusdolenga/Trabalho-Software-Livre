@@ -8,9 +8,9 @@ bool ehPrimo (int x){
             counter++;
     }
     if (counter == 2)
-        return true;
+        return "Primo";
     else
-        return false;
+        return "Não é primo";
 }
 
 int main() {
