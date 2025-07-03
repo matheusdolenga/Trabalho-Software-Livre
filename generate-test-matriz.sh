@@ -1,32 +1,40 @@
 #!/bin/bash
 
+# Define o nome do arquivo de saída
 OUTPUT_FILE="entrada_matriz.txt"
 
-ROWS=$((RANDOM % 5 + 2)) # Matrizes de 2x2 a 6x6
-COLS=$ROWS # Matrizes quadradas
+# Define um tamanho aleatório para as matrizes (quadradas, entre 2x2 e 6x6)
+N=$((RANDOM % 5 + 2))
 
-# Gera e escreve as duas matrizes
-echo "$ROWS $COLS" > $OUTPUT_FILE
+# Escreve o tamanho na primeira linha do arquivo (sobrescreve o arquivo)
+echo "$N" > $OUTPUT_FILE
 
-for k in $(seq 1 2) # Loop para gerar 2 matrizes
+echo "Gerando teste para matrizes ${N}x${N} no arquivo '${OUTPUT_FILE}'..."
+
+# Loop para gerar as duas matrizes
+for k in $(seq 1 2)
 do
-  for i in $(seq 1 $ROWS)
+  # Loop para cada linha da matriz
+  for i in $(seq 1 $N)
   do
     current_line=""
-    for j in $(seq 1 $COLS)
+    # Loop para cada coluna da matriz
+    for j in $(seq 1 $N)
     do
+      # Gera um elemento aleatório (entre 0 e 99)
       ELEMENT=$((RANDOM % 100))
       current_line+="$ELEMENT "
     done
+    # Escreve a linha completa no arquivo, removendo o espaço extra no final
     echo "${current_line% }" >> $OUTPUT_FILE
   done
 done
 
-# Adiciona a letra da operação aleatória
+# Adiciona a letra da operação aleatória ('a', 's', ou 'm')
 OPERATIONS=('a' 's' 'm')
 RANDOM_OP_INDEX=$((RANDOM % 3))
 SELECTED_OP=${OPERATIONS[$RANDOM_OP_INDEX]}
 
-echo $SELECTED_OP >> $OUTPUT_FILE
+echo "$SELECTED_OP" >> $OUTPUT_FILE
 
-echo "Arquivo de teste '$OUTPUT_FILE' gerado para uma matriz ${ROWS}x${COLS} com a operação '${SELECTED_OP}'."
+echo "Teste gerado com a operação: '${SELECTED_OP}'"
