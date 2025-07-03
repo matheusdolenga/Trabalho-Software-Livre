@@ -1,3 +1,18 @@
+#include <iostream>
+using namespace std;
+
+bool ehPrimo (int x){
+    int counter = 0;
+    for (int i = 1; i <= x; i++){
+        if (x % i == 0)
+            counter++;
+    }
+    if (counter == 2)
+        return true;
+    else
+        return false;
+}
+
 int main() {
     int num1;
     bool isPrime;
