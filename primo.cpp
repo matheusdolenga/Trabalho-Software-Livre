@@ -1,24 +1,30 @@
 #include <iostream>
-using namespace std;
+#include <windows.h> // Adicionado para a função de console do Windows
 
-bool ehPrimo (int x){
-    int counter = 0;
-    for (int i = 1; i <= x; i++){
-        if (x % i == 0)
-            counter++;
+bool ehPrimo(int n) {
+    if (n <= 1) {
+        return false;
     }
-    if (counter == 2)
-        return "Primo";
-    else
-        return "Não é primo";
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 int main() {
-    int num1;
-    bool isPrime;
-    
-    cin >> num1;
-    isPrime = ehPrimo(num1);
-    
-    cout << isPrime << endl;
+    // Define a página de código do console para UTF-8
+    SetConsoleOutputCP(CP_UTF8);
+
+    int numero;
+    std::cin >> numero;
+
+    if (ehPrimo(numero)) {
+        std::cout << "Primo" << std::endl;
+    } else {
+        std::cout << "Não é primo" << std::endl;
+    }
+
+    return 0;
 }
