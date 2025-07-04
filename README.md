@@ -36,6 +36,19 @@ make clean  # Remove os arquivos gerados
 - make <br>
 - bash
 
+## Observações
+Durante a produção do trabalho tive algumas dificuldades, principalmente na instalação do compilador g++ em conjunto com o make. Por algum motivo que não consegui identificar, ou o make era instalado e o g++ não, ou vice-versa, me impedindo de testar os programas. <br>
+
+Após seguir diversos tutoriais e baixar diversos programas, inclusive reinstalando os mesmos diversas vezes, consegui fazer funcionar através do **MSYS2 UCRT64**, que foi o único terminal que reconheceu os dois programas (g++ e make) instalados corretamente. O motivo ainda é incerto, mas pude continuar com a produção do trabalho e executar os devidos testes <br>
+
+Infelizmente, devido as dificuldades acima mencionadas, alguns commits que fiz vieram a se perder, pois, sem perceber, estava fazendo os ajustes e dando commits no repositório errado. Afim de não correr o risco de perder o progresso feito até ali, fiz então um commit que alterou diversos arquivos de uma vez, para refletir as mudanças que haviam sido paulatinamente realizadas. Caso o professor queira olhar com mais detalhes, basta procurar pelo commit abaixo:
+
+```
+e340009febc86b361815c9cf43946f68c89186a5
+-m "modificações nos codigos para melhor funcionalidade"
+```
+De toda forma, o trabalho foi concluido e entregue no prazo. Pude aprender bastante sobre git, branch, repositórios e automação de código.
+
 ## Autor
 Matheus Santos Dolenga – <a href="https://github.com/matheusdolenga">github.com/matheusdolenga<a> <br>
 BCC - 1º Período <br>
