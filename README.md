@@ -8,6 +8,12 @@ Projeto conjunto em bash e C++ com três programas principais:
 
 Inclui scripts Bash para gerar testes em arquivos .txt e um Makefile para automatizar a compilação.
 
+## Requisitos
+
+- g++ <br>
+- make <br>
+- bash
+
 ## Como compilar
 
 ```bash
@@ -29,12 +35,6 @@ make clean  # Remove os arquivos gerados
 ./vetor < entrada_vetor.txt  # Executa o programa vetor com a entrada recém gerada
 
 ```
-
-## Requisitos
-
-- g++ <br>
-- make <br>
-- bash
 
 ## Observações
 Durante a produção do trabalho tive algumas dificuldades, principalmente na instalação do compilador g++ em conjunto com o make. Por algum motivo que não consegui identificar, ou o make era instalado e o g++ não, ou vice-versa, me impedindo de testar os programas. <br>
